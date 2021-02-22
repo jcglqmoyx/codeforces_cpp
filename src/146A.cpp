@@ -3,26 +3,29 @@
 using namespace std;
 
 int main() {
-    int len, number;
+    int len;
+    string number;
     cin >> len >> number;
     int left = 0, right = 0;
-    for (int i = 0; i < len / 2; i++) {
-        int digit = number % 10;
-        if (digit != 4 && digit != 7) {
+    int n = number.length();
+    for (int i = 0; i < n / 2; i++) {
+        if (number[i] == '4') {
+            left += 4;
+        } else if (number[i] == '7') {
+            left += 7;
+        } else {
             cout << "NO" << endl;
             return 0;
         }
-        left += digit;
-        number /= 10;
-    }
-    for (int i = 0; i < len / 2; i++) {
-        int digit = number % 10;
-        if (digit != 4 && digit != 7) {
+        int j = i + n / 2;
+        if (number[j] == '4') {
+            right += 4;
+        } else if (number[j] == '7') {
+            right += 7;
+        } else {
             cout << "NO" << endl;
             return 0;
         }
-        right += digit;
-        number /= 10;
     }
     if (left == right) cout << "YES" << endl;
     else cout << "NO" << endl;
