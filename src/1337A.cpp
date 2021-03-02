@@ -8,7 +8,7 @@ int main() {
     while (t--) {
         long long a, b, c, d;
         cin >> a >> b >> c >> d;
-        cout << b << " " << b << " " << c << endl;
+        cout << b << " " << c << " " << c << endl;
     }
     return 0;
 }
